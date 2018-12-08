@@ -1,4 +1,6 @@
-/* =============================================================
+/*
+MYEDIT is removing strong from query to support persian and arabic words breaking
+=============================================================
  * bootstrap3-typeahead.js v4.0.2
  * https://github.com/bassjobsen/Bootstrap-3-Typeahead
  * =============================================================
@@ -322,7 +324,10 @@
                 }
             }
             for (i = 0; i < second.length; ++i) {
-               item = item.replace(second[i], second[i].replace(reg, '<strong>$&</strong>'));
+				/*MYEDIT>*/
+               /* item = item.replace(second[i], second[i].replace(reg, '<strong>$&</strong>'));*/
+               item = item.replace(second[i], second[i].replace(reg, '$&'));
+				/*<MYEDIT*/
             }
             return item;
         },
