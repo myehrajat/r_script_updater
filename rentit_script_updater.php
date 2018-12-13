@@ -21,7 +21,6 @@ add_action( 'admin_enqueue_scripts', 'wpdocs_enqueue_scripts_general', 400 );
 //Updating scripts
 /******************************************/
 function wpdocs_dequeue_scripts_general() {
-	wp_deregister_script( 'renita_moment-with-locales' );
 	//wp_deregister_script( 'renita_bootstrap-datetimepicker' );
 	//persian words will not supported by this version we make it to load newer one
 	wp_deregister_script( 'renita_bootstrap-typeahead' );
@@ -29,8 +28,6 @@ function wpdocs_dequeue_scripts_general() {
 }
 
 function wpdocs_enqueue_scripts_general() {
-	//https://github.com/moment/moment
-	wp_enqueue_script( 'renita_moment-with-locales',plugins_url("moment/min/moment-with-locales.min.js",__FILE__ ),array(), '2.22.2', true );
 	//https://github.com/tempusdominus/bootstrap-4
 	//wp_enqueue_script( 'renita_bootstrap-datetimepicker',plugins_url("bootstrap-4-datetime-picker/build/js/tempusdominus-bootstrap-4.min.js",__FILE__ ), array( 'jquery' ), '5.1.2', true);//throw erorr
 	//https://github.com/bassjobsen/Bootstrap-3-Typeahead
@@ -57,7 +54,6 @@ function wpdocs_enqueue_styles_general() {
 	//wp_enqueue_style( 'renita_bootstrap-datetimepicker',plugins_url("bootstrap-4-datetime-picker/build/css/tempusdominus-bootstrap-4.min.css",__FILE__ ), array(), '5.1.2', true);
 	//wp_enqueue_style( 'renita_owl.carousel.min',plugins_url("OwlCarousel2/dist/assets/owl.carousel.min.css",__FILE__ ), array(), '2.3.4', true);
 	//wp_enqueue_style( 'renita_owl.theme.default.min',plugins_url("OwlCarousel2/dist/assets/owl.theme.default.min.css",__FILE__ ), array(), '2.3.4', true);
-	//wp_enqueue_style( 'renita_font-awesome',plugins_url("Font-Awesome/css/fontawesome.min.css",__FILE__ ), array(), '5.6.0', true);
 }
 
 
